@@ -1,8 +1,8 @@
-# !!!Replace with your unique project name!!!
+# Color Transparecny
 
 ## Description
 
-!!!Replace with a description of what your program does!!!
+ I wanted my program to open a file and examine the transparecny number, and decide if that color may or may not be problematic to color blind people. I wanted it to read the file, after the third comma, and analyze that number and ouput if the color might or might not be a problem.
 
 ### v0.2 Updates
 
@@ -15,7 +15,7 @@
 
 ## Developer
 
-!!!Replace with your name!!!
+Nicole Keane
 
 ## Example
 
@@ -36,23 +36,23 @@ Here is an example of the program running:
 
 ### Variables and Data Types
 
-!!!Replace with a summary and examples of how multiple variables have been used with a variety of data types and why they have been used effectively and appropriately!!!
+I used double to represent the decimal that will hold the transparecny number. The string filename will help the user open the file "colors" I used the string input to count and find the commas in the file.
 
 ### Console Input and Output
 
-!!!Replace with a summary and examples of how input and output have been used effectively and appropriately!!!
+I will input the file name "colors" it is supposed to examine the last number and then output the phrase This color is unlikely/ likely to be probelmatic based on transparency.
 
 ### Decisions
 
-!!!Replace with a summary and examples of how multiple decision constructs have been used effectively and appropriately!!!
+I used an If statment, and another if statment, one to see if the file was open and another one to count to the right amount of places within the file.
 
 ### Iteration
 
-!!!Replace with a summary and examples of how iteration has been used effectively and appropriately!!!
+I use an if and an else if, for the user to do something if the statment is true and to move on if it is not.
 
 ### File Input and Output
 
-!!!Replace with a summary and examples of how input and/or output of files have been used effectively and appropriately!!!
+I input the filename, and it should read it an output the correct reposne.
 
 ### Arrays/Vectors
 
