@@ -3,6 +3,9 @@
 ## Description
 
  I wanted my program to open a file and examine the transparecny number, and decide if that color may or may not be problematic to color blind people. I wanted it to read the file, after the third comma, and analyze that number and ouput if the color might or might not be a problem.
+### v0.3 Updates
+I created a file of colors with the percent of RBG that each color has. Then it reads the file and decides whether the color is difficult for people with red green deficiences, and looks at the color and decides if it is dark, and if it has a good blalnce of RGB values. I changed this to make the code easily readable and organized. This file is using the basic 16 colors.
+
 
 ### v0.2 Updates
 I added a vector that holds the double value and reads it, before I was trying to move spaces and find the double, but now I am use the stod function to turn the file string into a double because it was a decimal.
@@ -41,6 +44,8 @@ This color is unlikely to be problematic based on transperancy
 ### Variables and Data Types
 
 I used double to represent the decimal that will hold the transparecny number. The string filename will help the user open the file "colors" I used the string input to count and find the commas in the file. I also use a string for the input.
+### Updates
+I used a string to hold the color name, and if the percent is green, blue or red.
 
 ### Console Input and Output
 
@@ -49,6 +54,8 @@ I will input the file name "colors" it is supposed to examine the last number an
 ### Decisions
 
 I used an If statment, and another if statment, one to see if the file was open and another one to count to the right amount of places within the file.
+### Updates
+I used if and else statment to check if the color is hard to people with a red green deficieny, if the the color is dark, and if it has a good balance of red green and blue.
 
 ### Iteration
 
@@ -59,6 +66,8 @@ I am inserting the values put in the vector to make sure we are in the correct p
 
 
 I use a vector to store the double and then read a string from the file and turn it into a double using stod.
+### Updates
+I can insert a color in the list and it will output if the color is dark, if it is more red or green, and if it is a good balance of RGB. I input a string and get a double, and a bool output.
 
 *Coming in version 0.2*
 
@@ -67,5 +76,7 @@ I use a vector to store the double and then read a string from the file and turn
 I am using two void functions to help decide if there is an error with the file and to print out the messages which is the print_msg1 and print_msg2.
 
 ### Classes
+1. Created a file reader class to read information from the input file. Stores the data in a vector of palette.
+2. Created a palette class to store RGB values and color name. Create logic to provide details about the color based on RGB values.
 
 *Coming in version 1.0*

@@ -1,54 +1,61 @@
 //Author: Nicole Keane
 #include <iostream>
-#include <fstream>
-#include <vector>
+#include "filereader.h"
+#include "palette.h"
+#include <string>
 using namespace std;
 
-bool add_value(double val, vector<double> &values);
-void print_msg1();
-void print_msg2();
+
+void display_colors(vector<palette> vs);
+void display_information(string user_color,vector<palette> vs);
+
+
 int main()
 {
-  string input;
-  double color;
-    string filename="Colors.txt";
-fstream reader;
-//
-vector<double> values;
-reader.open (filename,ios::in);
-if(reader.is_open()){
-  while(reader>>input){ 
-    //cout<<input<<endl;
-    if(add_value(stod(input),values)==true)
+    filereader f("input.in");
+    vector<palette> vs = f.retreive_database();
+    display_colors(vs);
+    string user_color;
+    do
     {
-      if(values[3]>0.5)
-      {
-        print_msg1();
-      }else
-      {
-        print_msg2();
-      }
-      values.clear();
+        cout<<"Enter a color from database(q to quit): "<<endl;
+        cin>>user_color;
+        if(user_color!=string(1,'q'))
+        display_information(user_color,vs);
+    }while(user_color!=string(1,'q'));
+
+}
+
+
+void display_colors(vector<palette> vs)
+{
+    for(int i=0;i<vs.size();i++)
+    {
+        cout<<i+1<<"."<<vs[i].get_color_name()<<endl;
     }
-  }
-}
-  return 0;
 }
 
-void print_msg1()
+void display_information(string user_color,vector<palette> vs)
 {
-  cout<<"This color is unlikely to be problematic based on transperancy"<<endl;
-}
+    cout<<"*** Information about "<<user_color<<" ***"<<endl;
+    for(int i=0;i<vs.size();i++)
+    {
+        if(vs[i].get_color_name()==user_color)
+        {
+            cout<<"Deficieny Status:";
+            vs[i].deficiency();
 
-void print_msg2()
-{
-  cout<<"This color is likely to be problematic based on transperancy"<<endl;
-}
+            vs[i].lacking_gradient();
 
-bool add_value(double val, vector<double> &values)
-{
-    values.push_back(val);
-    if(values.size()==4)
-      return true;
-    return false;
+            cout<<"Visibility Index: "<<to_string(vs[i].visibility())<<endl;
+
+            if(vs[i].isDark()==true)
+            {
+                cout<<"This color is dark"<<endl;
+            }else{
+                cout<<"This color is not dark"<<endl;
+            }
+            cout<<"\n\n";
+        }
+    }
 }
